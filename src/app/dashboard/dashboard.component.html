@@ -1,0 +1,42 @@
+<div *ngIf="this.SessionServiceService.loggedIn == true">
+  <div class="container-fluid splash">
+    <div class="row">
+      <div class="col-12">
+        <div class="container">
+          <div class="row">
+              <div class="col-12">
+                <h3>Welcome to the Badge Book System {{this.SessionServiceService.userData.Data.UserData.FirstName}} :)</h3>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 TextCenter">
+              <div class="card cardOptions">
+                <div class="menuOptionFrame menuOption1">
+                  <i class="fa fa-user"></i> <br>
+                  <h3>Edit Preferences</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 TextCenter">
+              <div class="card cardOptions">
+                <div class="menuOptionFrame menuOption2">
+                  <i class="fa fa-star"></i> <br>
+                  <h3>Edit Profile</h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 TextCenter">
+              <div class="card cardOptions">
+                <div class="menuOptionFrame menuOption3">
+                  <i class="fa fa-search"></i> <br>
+                  <h3>Search</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
