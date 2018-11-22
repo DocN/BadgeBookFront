@@ -45,9 +45,9 @@ const appRoutes:Routes = [
     component: SearchComponent
   },
   {
-    path: 'profile',
+    path: 'profile/:id',
     component: ViewProfilePageComponent
-  }
+  },
 ];
 
 

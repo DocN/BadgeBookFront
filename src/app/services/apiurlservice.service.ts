@@ -13,5 +13,6 @@ export class APIURLserviceService {
   public getDescriptionURL = this.domain + "/api/personalprofile/getDescription";
   public editProfileDescURL = this.domain + "/api/personalprofile/editDescription";
   public searchURL = this.domain + "/api/search";
+  public getProfileDataURL = this.domain + "/api/profile/";
   constructor() { }
 }
