@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {APIURLserviceService} from '../services/apiurlservice.service';
 import { HttpClient } from '@angular/common/http';
+import {ProfileServiceService} from '../services/profile-service.service';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -10,7 +11,7 @@ export class SearchComponent implements OnInit {
 
   private searchKey = "";
   private searchData = [];
-  constructor(private APIURLserviceService:APIURLserviceService, private http: HttpClient) { }
+  constructor(private APIURLserviceService:APIURLserviceService, private http: HttpClient, private ProfileServiceService:ProfileServiceService) { }
 
   ngOnInit() {
   }
