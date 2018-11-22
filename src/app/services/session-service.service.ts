@@ -35,6 +35,7 @@ export class SessionServiceService {
     .subscribe(
     (res) => {
       this.JWTToken = res["token"];
+      localStorage.setItem('BadgeBookTokenJWT', this.JWTToken);
       this.expire = res["expiration"];
       this.decodeToken(res['token']);
       this.loggedIn = true;

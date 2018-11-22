@@ -9,5 +9,6 @@ export class APIURLserviceService {
   public loginURL = this.domain + "/api/auth/login";
   public userDataURL = this.domain + "/api/personalprofile";
   public editUserURL = this.domain + "/api/personalprofile/edituser";
+  public getDescriptionURL = this.domain + "/api/personalprofile/getDescription";
   constructor() { }
 }

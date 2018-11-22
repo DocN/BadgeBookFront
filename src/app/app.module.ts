@@ -15,7 +15,9 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { LoginPortalComponent } from './login-portal/login-portal.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PreferencesComponent } from './dashboard/preferences/preferences.component';
+import { EditProfileComponent } from './dashboard/edit-profile/edit-profile.component';
 
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 const appRoutes:Routes = [
   {
@@ -39,7 +41,8 @@ const appRoutes:Routes = [
     MainPageComponent,
     LoginPortalComponent,
     DashboardComponent,
-    PreferencesComponent
+    PreferencesComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +51,7 @@ const appRoutes:Routes = [
     FormsModule,
     HttpClientModule,
     HttpModule, 
+    AngularEditorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

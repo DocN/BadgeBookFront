@@ -40,10 +40,16 @@
   </div>
 </div>
 
-<div *ngIf="this.DashrouteService.dashRoute == 'preferences'">
-  <app-preferences></app-preferences>
-</div>
-
-<div *ngIf="this.DashrouteService.dashRoute == 'editProfile'">
-  <app-preferences></app-preferences>
+<div class="container-fluid backgroundSmoke">
+  <div class="row">
+    <div class="col-12">
+      <div *ngIf="this.DashrouteService.dashRoute == 'preferences'">
+        <app-preferences></app-preferences>
+      </div>
+      
+      <div *ngIf="this.DashrouteService.dashRoute == 'editProfile'">
+        <app-edit-profile></app-edit-profile>
+      </div>
+    </div>
+  </div>
 </div>
