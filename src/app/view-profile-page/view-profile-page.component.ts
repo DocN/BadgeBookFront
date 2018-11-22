@@ -12,6 +12,8 @@ import { ActivatedRoute } from '@angular/router';
 export class ViewProfilePageComponent implements OnInit {
 
   private id  = '';
+  private userData;
+  private dataLoaded = false;
   constructor(private route: ActivatedRoute, private http: HttpClient, private ProfileServiceService:ProfileServiceService, private APIURLserviceService:APIURLserviceService) {
     this.id = '' + this.route.snapshot.paramMap.get('id');
     this.getProfileData();
@@ -32,12 +34,20 @@ export class ViewProfilePageComponent implements OnInit {
     .subscribe(
     (res) => {
       console.log(res);
+      this.userData = res['Data'];
+      this.dataLoaded = true;
+      this.setupDescription();
     },
     err => {
     console.log(err);
     //finish loading
     }
     );
+  }
+
+  setupDescription() {
+    let descBox = document.getElementById("description");
+    descBox.innerHTML = this.userData.UserData.ProfileData.Description;
   }
 
 
