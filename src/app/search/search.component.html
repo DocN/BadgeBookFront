@@ -34,12 +34,12 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let currentUser of searchData;let i = index">
-                        <th scope="row">{{currentUser.Email}}</th>
-                        <td>{{currentUser.UserData.FirstName}}</td>
-                        <td>{{currentUser.UserData.LastName}}</td>
+                      <tr *ngFor="let currentResult of searchData;let i = index">
+                        <th scope="row">{{currentResult.Email}}</th>
+                        <td>{{currentResult.UserData.FirstName}}</td>
+                        <td>{{currentResult.UserData.LastName}}</td>
                         <td>
-                          <div id="editChildData{{i}}" class="editUser" (click)="selectChildData(currentUser)"><i class="fa fa-map-marker"></i> View Profile</div>
+                          <div id="editChildData{{i}}" class="searchResult" (click)="selectProfilePage(currentResult)"><i class="fa fa-map-marker"></i> View Profile</div>
                         </td>
                       </tr>
                     </tbody>

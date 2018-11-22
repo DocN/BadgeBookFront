@@ -42,6 +42,10 @@ const appRoutes:Routes = [
   {
     path: 'search',
     component: SearchComponent
+  },
+  {
+    path: 'profile',
+    component: ViewProfilePageComponent
   }
 ];
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {APIURLserviceService} from '../services/apiurlservice.service';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 import {ProfileServiceService} from '../services/profile-service.service';
 @Component({
   selector: 'app-search',
@@ -11,7 +12,7 @@ export class SearchComponent implements OnInit {
 
   private searchKey = "";
   private searchData = [];
-  constructor(private APIURLserviceService:APIURLserviceService, private http: HttpClient, private ProfileServiceService:ProfileServiceService) { }
+  constructor(private router:Router, private APIURLserviceService:APIURLserviceService, private http: HttpClient, private ProfileServiceService:ProfileServiceService) { }
 
   ngOnInit() {
   }
@@ -34,6 +35,12 @@ export class SearchComponent implements OnInit {
     //finish loading
     }
     );
+  }
+
+  selectProfilePage(currentResult) {
+    this.ProfileServiceService.currentSearchUID = currentResult.UID;
+    console.log(this.ProfileServiceService.currentSearchUID);
+    this.router.navigate(['/profile']);
   }
 
 }
