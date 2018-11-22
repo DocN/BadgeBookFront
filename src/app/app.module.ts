@@ -30,7 +30,7 @@ const appRoutes:Routes = [
     component: LoginPortalComponent
   },
   {
-    path: 'login/{id}',
+    path: 'login/:id',
     component: AppLoginPortalComponent
   },
   {
