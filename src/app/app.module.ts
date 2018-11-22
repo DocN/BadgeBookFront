@@ -19,6 +19,7 @@ import { EditProfileComponent } from './dashboard/edit-profile/edit-profile.comp
 
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { AppLoginPortalComponent } from './app-login-portal/app-login-portal.component';
+import { SearchComponent } from './search/search.component';
 
 const appRoutes:Routes = [
   {
@@ -36,6 +37,10 @@ const appRoutes:Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent
+  },
+  {
+    path: 'search',
+    component: SearchComponent
   }
 ];
 
@@ -48,7 +53,8 @@ const appRoutes:Routes = [
     DashboardComponent,
     PreferencesComponent,
     EditProfileComponent,
-    AppLoginPortalComponent
+    AppLoginPortalComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
