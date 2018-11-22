@@ -1,0 +1,58 @@
+<div class="container" *ngIf="this.SessionServiceService.loadedUserData == true">
+    <div class="row">
+      <div class="col-12">
+          <mdb-card>
+            <mdb-card-body>
+              <h1 class="textCenter">Edit Preferences</h1>
+              <form ngNativeValidate (ngSubmit)="updatePreferences()">
+                <div class="form-group">
+                  <label for="name">Email</label>
+                  <input name="Email" [(ngModel)]="this.SessionServiceService.preferenceModel.Email" #Email="ngModel" type="email" class="form-control" id="Email" required readonly>
+                </div>
+                <div class="form-group">
+                  <label for="FirstName">First Name</label>
+                  <input name="FirstName" [(ngModel)]="this.SessionServiceService.preferenceModel.FirstName" #FirstName="ngModel" type="text" class="form-control" id="FirstName" required>
+                </div>
+              <div class="form-group">
+                <label for="LastName">Last Name</label>
+                <input name="LastName" [(ngModel)]="this.SessionServiceService.preferenceModel.LastName" #LastName="ngModel" type="text" class="form-control" id="LastName" required>
+              </div>
+              <div class="form-group">
+                <label for="Country">Country</label>
+                <input name="Country" [(ngModel)]="this.SessionServiceService.preferenceModel.Country" #Country="ngModel" type="text" class="form-control" id="Country" required>
+              </div>
+              <div class="form-group">
+                <div class="container-fluid nopadding">
+                  <div class="row">
+                    <div class="col-4 centerText">
+                        <label for="BDate">Birth Day</label>
+                        <input name="BDate" [(ngModel)]="this.SessionServiceService.preferenceModel.BirthDay" #BDate="ngModel" type="number" min=1 max=31 class="form-control" id="BDay" required>
+                    </div>
+                    <div class="col-4 centerText">
+                        <label for="BMonth">Birth Month</label>
+                        <input name="BMonth" [(ngModel)]="this.SessionServiceService.preferenceModel.BirthMonth" #BMonth="ngModel" type="number" min=1 max=12 class="form-control" id="BMonth" required>
+                    </div>
+                    <div class="col-4 centerText">
+                        <label for="BYear">Birth Year</label>
+                        <input name="BYear" [(ngModel)]="this.SessionServiceService.preferenceModel.BirthYear" #BYear="ngModel" type="number" min=1 max=2018 class="form-control" id="BYear" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-success">Submit Changes</button>
+              </div>
+            </form>
+          </mdb-card-body>
+        </mdb-card>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container-fluid" *ngIf="this.SessionServiceService.noUserData == true">
+    <div class="row">
+      <div class="col-12">
+        <h1>Error Santa has deleted your child data :( Please contact santa to fix this @ Santa@northpole.net </h1>
+      </div>
+    </div>
+  </div>

@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { MainPageComponent } from './main-page/main-page.component';
 import { LoginPortalComponent } from './login-portal/login-portal.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PreferencesComponent } from './dashboard/preferences/preferences.component';
 
 
 const appRoutes:Routes = [
@@ -37,7 +38,8 @@ const appRoutes:Routes = [
     AppComponent,
     MainPageComponent,
     LoginPortalComponent,
-    DashboardComponent
+    DashboardComponent,
+    PreferencesComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@ import { APIURLserviceService } from '../services/apiurlservice.service';
   providedIn: 'root'
 })
 export class SessionServiceService {
+  public preferenceModel: any = {};
   public JWTToken = "";
   public expire = "";
   public loggedIn = false;
@@ -63,6 +64,7 @@ export class SessionServiceService {
       this.userData = res;
       this.loadedUserData = true;
       this.noUserData = false;
+      this.loadPreferenceData();
       this.router.navigate(['/dashboard']);
     },
     err => {
@@ -70,6 +72,47 @@ export class SessionServiceService {
       this.noUserData = true;
       //finish loading
     });
+  }
+
+
+  refreshUserData() {
+    this.loadedUserData = false;
+    console.log("get user");
+    if(this.loggedIn == false) {
+      console.log("not logged in");
+      return;
+    }
+    var config = {headers : {
+    "Authorization": "Bearer " + this.JWTToken
+    }
+    }; 
+    this.http.get(this.APIURLserviceService.userDataURL, config)
+    .subscribe(
+    (res) => {
+      console.log(res);
+      this.userData = res;
+      this.loadedUserData = true;
+      this.noUserData = false;
+      this.loadPreferenceData();
+    },
+    err => {
+      console.log(err);
+      this.noUserData = true;
+      //finish loading
+    });
+  }
+
+  loadPreferenceData() {
+    this.preferenceModel.Email = this.userData.Data.Email;
+    this.preferenceModel.UID = this.userData.Data.UID;
+    this.preferenceModel.Username = this.userData.Data.Username;
+    this.preferenceModel.BirthDay = this.userData.Data.BirthDay;
+    this.preferenceModel.BirthMonth = this.userData.Data.BirthMonth;
+    this.preferenceModel.BirthYear = this.userData.Data.BirthYear;
+
+    this.preferenceModel.FirstName = this.userData.Data.UserData.FirstName;
+    this.preferenceModel.LastName = this.userData.Data.UserData.LastName;
+    this.preferenceModel.Country = this.userData.Data.UserData.Country;
   }
 
   decodeToken(token) {
