@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <form ngNativeValidate (ngSubmit)="search()"> 
+        <div class="form-group">
+          <label for="name">Enter Search Keywords</label>
+          <input name="SearchKey" [(ngModel)]="searchKey" #SearchKey="ngModel" type="text" class="form-control" id="SearchKey" required>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-info">Search!</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <mdb-card>
+        <mdb-card-body>
+          <div class="row">
+            <div class="col-12">
+                <h1 class="title">Search Results</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Email</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Options</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let currentResult of searchData;let i = index">
+                        <th scope="row">{{currentResult.Email}}</th>
+                        <td>{{currentResult.UserData.FirstName}}</td>
+                        <td>{{currentResult.UserData.LastName}}</td>
+                        <td>
+                          <div id="editChildData{{i}}" class="searchResult" (click)="selectProfilePage(currentResult)"><i class="fa fa-map-marker"></i> View Profile</div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>
+            </div>
+          </div>
+        </mdb-card-body>
+      </mdb-card>
+    </div>
+  </div>
+</div>
+
+{{searchKey}}
