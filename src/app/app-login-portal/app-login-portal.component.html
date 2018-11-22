@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="card cardCenter loginFrame">
+              <h1 class="textLoginTitle"> Login </h1>
+              <form ngNativeValidate (ngSubmit)="loginAttempt()"> 
+                <div class="form-group">
+                  <label for="name">Email</label>
+                  <input name="Email" [(ngModel)]="loginModel.Email" #Email="ngModel" type="email" class="form-control" id="Email" required>
+                </div>
+                <div class="form-group">
+                  <label for="name">Password</label>
+                  <input name="Password" [(ngModel)]="loginModel.Password" #Email="ngModel" type="password" class="form-control" id="Password" required>
+                </div>
+                <div class="form-group">
+                  <button class="btn btn-success loginbtn" type="submit">Login</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
