@@ -15,7 +15,8 @@ export class AppLoginPortalComponent implements OnInit {
   private appList: any = {
     '0': "abc.ca",
     '1': "www.ignika.azurewebsites.net",
-    '2': "cbcc.ca"
+    '2': "cbcc.ca",
+    '666': 'https://fredwongg.github.io/ignika',
   }
 
   id: string;
