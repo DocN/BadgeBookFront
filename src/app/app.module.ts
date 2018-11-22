@@ -19,6 +19,7 @@ import { EditProfileComponent } from './dashboard/edit-profile/edit-profile.comp
 
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { AppLoginPortalComponent } from './app-login-portal/app-login-portal.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 const appRoutes:Routes = [
   {
@@ -48,7 +49,8 @@ const appRoutes:Routes = [
     DashboardComponent,
     PreferencesComponent,
     EditProfileComponent,
-    AppLoginPortalComponent
+    AppLoginPortalComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
