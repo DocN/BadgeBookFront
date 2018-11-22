@@ -64,5 +64,24 @@ export class EditProfileComponent implements OnInit {
     }
     );
   }
+  setProfileData() {
+    let data = {"Description": this.htmlContent };
+    const body = JSON.stringify(data);
+    var config = {headers : {
+    "Content-Type": "application/json; charset = utf-8;",
+    "Authorization": "Bearer " + this.SessionServiceService.JWTToken
+    }
+    }; 
+    this.http.post(this.APIURLserviceService.editProfileDescURL, data, config)
+    .subscribe(
+    (res) => {
+      console.log(res);
+    },
+    err => {
+    console.log(err);
+    //finish loading
+    }
+    );
+  }
 
 }
