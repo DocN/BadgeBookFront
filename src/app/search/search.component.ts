@@ -40,7 +40,7 @@ export class SearchComponent implements OnInit {
   selectProfilePage(currentResult) {
     this.ProfileServiceService.currentSearchUID = currentResult.UID;
     console.log(this.ProfileServiceService.currentSearchUID);
-    this.router.navigate(['/profile']);
+    this.router.navigate(['/profile/' + this.ProfileServiceService.currentSearchUID]);
   }
 
 }
