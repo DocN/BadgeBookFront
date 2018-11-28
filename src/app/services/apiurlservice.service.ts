@@ -16,5 +16,7 @@ export class APIURLserviceService {
   public searchURL = this.domain + "/api/search";
   public getProfileDataURL = this.domain + "/api/profile/";
   public changePasswordURL = this.domain + "/api/auth/changepassword";
+  public resetPasswordURL = this.domain + "/api/auth/resetPassword";
+  public resetPasswordwTokenURL = this.domain + "/api/auth/resetPasswordwtoken";
   constructor() { }
 }
