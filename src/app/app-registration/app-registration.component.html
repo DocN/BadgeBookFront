@@ -1,0 +1,34 @@
+<app-navigation></app-navigation>
+
+<div class="container" *ngIf="!response">
+ <br/>
+  <div class="form-group">
+    <label for="name">App Name:</label>
+    <input type="text" class="form-control" id="name" [(ngModel)]="user.Name">
+  </div>
+  <div class="form-group">
+    <label for="desc">App Description:</label>
+    <input type="text" class="form-control" id="desc" [(ngModel)]="user.Description">
+  </div>
+  <div class="form-group">
+    <label for="lurl">Logo Url:</label>
+    <input type="text" class="form-control" id="lurl" [(ngModel)]="user.ImageUrl">
+  </div>
+  <div class="form-group">
+    <label for="appurl">App Url:</label>
+    <input type="text" class="form-control" id="appurl" [(ngModel)]="user.AppUrl">
+  </div>
+ 
+  <button (click)="registerApp()" class="btn btn-success btn-block">Register</button>
+</div>
+<div class="container" *ngIf="response">
+  <h1>Congratulations! Your app was successfuly registered.</h1>
+  <h3>Here are the next steps for you to do:</h3>
+  <li>Add login</li>
+  <li>Add app token: {{result.appToken}}</li>
+  <li>Remember your app id {{result.appId}}</li>
+</div>
+
+<br />
+<br />
+

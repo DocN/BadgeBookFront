@@ -23,6 +23,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { SearchComponent } from './search/search.component';
 import { ViewProfilePageComponent } from './view-profile-page/view-profile-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
+import { AppRegistrationComponent } from './app-registration/app-registration.component';
 
 const appRoutes:Routes = [
   {
@@ -49,6 +50,10 @@ const appRoutes:Routes = [
     path: 'profile/:id',
     component: ViewProfilePageComponent
   },
+  {
+    path: 'app-reg',
+    component: AppRegistrationComponent
+  }
 ];
 
 
@@ -64,7 +69,8 @@ const appRoutes:Routes = [
     NavigationComponent,
     SearchComponent,
     ViewProfilePageComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    AppRegistrationComponent
   ],
   imports: [
     BrowserModule,
