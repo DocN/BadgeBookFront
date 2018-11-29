@@ -25,6 +25,7 @@ import { ViewProfilePageComponent } from './view-profile-page/view-profile-page.
 import { SearchPageComponent } from './search-page/search-page.component';
 import { AppRegistrationComponent } from './app-registration/app-registration.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { RecoveryPageComponent } from './recovery-page/recovery-page.component';
 
 const appRoutes:Routes = [
   {
@@ -58,6 +59,8 @@ const appRoutes:Routes = [
   {
     path: 'admin-dashboard',
     component : AdminDashboardComponent
+    path: 'recovery',
+    component: RecoveryPageComponent
   }
 ];
 
@@ -76,7 +79,8 @@ const appRoutes:Routes = [
     ViewProfilePageComponent,
     SearchPageComponent,
     AppRegistrationComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    RecoveryPageComponent
   ],
   imports: [
     BrowserModule,
