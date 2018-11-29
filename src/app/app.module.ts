@@ -59,6 +59,8 @@ const appRoutes:Routes = [
   {
     path: 'admin-dashboard',
     component : AdminDashboardComponent
+  },
+  {
     path: 'recovery',
     component: RecoveryPageComponent
   }
