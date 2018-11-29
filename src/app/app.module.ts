@@ -88,8 +88,7 @@ const appRoutes:Routes = [
     AppRegistrationComponent,
     AdminDashboardComponent,
     RecoveryPageComponent,
-    AppBoardComponent,
-    EditAppComponent
+    AppBoardComponent
   ],
   imports: [
     BrowserModule,
