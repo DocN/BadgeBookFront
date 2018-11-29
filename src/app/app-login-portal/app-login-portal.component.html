@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf='!loading'>
   <div class="row">
     <div class="col-12">
       <div class="container">
@@ -28,3 +28,4 @@
     </div>
   </div>
 </div>
+<h3 *ngIf='loading'>Loading...</h3>
