@@ -61,7 +61,7 @@ export class AppLoginPortalComponent implements OnInit {
         (res) => {
           this.appList.forEach(element => {
             if (element['id'] == this.id) {
-              window.location.href = 'http://' + element['appUrl'] +'/?t=' + element["token"];
+              window.location.href = element['appUrl'] +'/?t=' + element["token"];
             }
           });
         },

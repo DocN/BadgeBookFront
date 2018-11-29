@@ -6,6 +6,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link waves-effect waves-light" routerLink="/app-board">Apps</a>
+            </li>
             <li class="nav-item" *ngIf="!SessionServiceService.loggedIn">
                 <a class="nav-link waves-effect waves-light" routerLink="/login">Login <span class="sr-only">(current)</span></a>
             </li>
