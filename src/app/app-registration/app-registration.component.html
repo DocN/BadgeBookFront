@@ -24,9 +24,11 @@
 <div class="container" *ngIf="response">
   <h1>Congratulations! Your app was successfuly registered.</h1>
   <h3>Here are the next steps for you to do:</h3>
-  <li>Add login</li>
-  <li>Add app token: {{result.appToken}}</li>
-  <li>Remember your app id {{result.appId}}</li>
+  <li>Login button for your app:</li>
+  <code>
+      &lt;a class=&quot;btn btn-info&quot; id=&quot;login_link&quot; href=&quot;https://badgebookfront.azurewebsites.net/#/login/{{result.appId}}&quot;&gt;Login&lt;/a&gt;
+    </code>
+  <li>App token for badge management: <code>{{result.appToken}}</code></li>
 </div>
 
 <br />
