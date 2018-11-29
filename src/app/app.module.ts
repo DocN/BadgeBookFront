@@ -24,6 +24,7 @@ import { SearchComponent } from './search/search.component';
 import { ViewProfilePageComponent } from './view-profile-page/view-profile-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { AppRegistrationComponent } from './app-registration/app-registration.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 const appRoutes:Routes = [
   {
@@ -53,6 +54,10 @@ const appRoutes:Routes = [
   {
     path: 'app-reg',
     component: AppRegistrationComponent
+  },
+  {
+    path: 'admin-dashboard',
+    component : AdminDashboardComponent
   }
 ];
 
@@ -70,7 +75,8 @@ const appRoutes:Routes = [
     SearchComponent,
     ViewProfilePageComponent,
     SearchPageComponent,
-    AppRegistrationComponent
+    AppRegistrationComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,

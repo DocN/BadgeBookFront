@@ -1,7 +1,7 @@
 <app-navigation></app-navigation>
 
 <div class="container" *ngIf="!response">
- <br/>
+  <br />
   <div class="form-group">
     <label for="name">App Name:</label>
     <input type="text" class="form-control" id="name" [(ngModel)]="user.Name">
@@ -18,7 +18,7 @@
     <label for="appurl">App Url:</label>
     <input type="text" class="form-control" id="appurl" [(ngModel)]="user.AppUrl">
   </div>
- 
+
   <button (click)="registerApp()" class="btn btn-success btn-block">Register</button>
 </div>
 <div class="container" *ngIf="response">
@@ -28,9 +28,10 @@
   <code>
       &lt;a class=&quot;btn btn-info&quot; id=&quot;login_link&quot; href=&quot;https://badgebookfront.azurewebsites.net/#/login/{{result.appId}}&quot;&gt;Login&lt;/a&gt;
     </code>
+  <li>App id for badge management: <code>{{result.appId}}</code></li>
+
   <li>App token for badge management: <code>{{result.appToken}}</code></li>
 </div>
 
 <br />
 <br />
-
