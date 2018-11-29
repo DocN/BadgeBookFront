@@ -1,3 +1,4 @@
+<app-navigation></app-navigation>
 <div class="container-fluid">
   <div class="row">
     <div class="col-12">
@@ -16,6 +17,7 @@
                   <label for="name">Password</label>
                   <input name="Password" [(ngModel)]="loginModel.Password" #Email="ngModel" type="password" class="form-control" id="Password" required>
                 </div>
+                <a class="nav-link waves-effect waves-light" routerLink="/recovery">Forgot Password?</a>
                 <div class="form-group">
                   <button class="btn btn-success loginbtn" type="submit">Login</button>
                 </div>

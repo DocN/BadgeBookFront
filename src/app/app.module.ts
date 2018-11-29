@@ -22,6 +22,8 @@ import { AppLoginPortalComponent } from './app-login-portal/app-login-portal.com
 import { NavigationComponent } from './navigation/navigation.component';
 import { SearchComponent } from './search/search.component';
 import { ViewProfilePageComponent } from './view-profile-page/view-profile-page.component';
+import { SearchPageComponent } from './search-page/search-page.component';
+import { RecoveryPageComponent } from './recovery-page/recovery-page.component';
 
 const appRoutes:Routes = [
   {
@@ -42,11 +44,15 @@ const appRoutes:Routes = [
   },
   {
     path: 'search',
-    component: SearchComponent
+    component: SearchPageComponent
   },
   {
-    path: 'profile',
+    path: 'profile/:id',
     component: ViewProfilePageComponent
+  },
+  {
+    path: 'recovery',
+    component: RecoveryPageComponent
   }
 ];
 
@@ -62,7 +68,9 @@ const appRoutes:Routes = [
     AppLoginPortalComponent,
     NavigationComponent,
     SearchComponent,
-    ViewProfilePageComponent
+    ViewProfilePageComponent,
+    SearchPageComponent,
+    RecoveryPageComponent
   ],
   imports: [
     BrowserModule,
