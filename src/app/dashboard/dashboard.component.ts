@@ -28,4 +28,8 @@ export class DashboardComponent implements OnInit {
   switchEditProfile() {
     this.DashrouteService.dashRoute = "editProfile";
   }
+
+  switchToInbox() {
+    this.DashrouteService.dashRoute = "inbox";
+  }
 }

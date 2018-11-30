@@ -1,3 +1,40 @@
-<p>
-  inbox works!
-</p>
+
+<div class="container topmargin">
+  <div class="row">
+    <div class="col-12">
+      <mdb-card>
+        <mdb-card-body>
+          <div class="row">
+            <h1>Inbox</h1>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">From</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Subject</th>
+                        <th scope="col">Options</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let currentResult of searchData;let i = index">
+                        <th scope="row">{{currentResult.Email}}</th>
+                        <td>{{currentResult.UserData.FirstName}}</td>
+                        <td>{{currentResult.UserData.LastName}}</td>
+                        <td>
+                          <div id="editChildData{{i}}" class="searchResult" (click)="selectProfilePage(currentResult)"><i class="fa fa-map-marker"></i> View Profile</div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>
+            </div>
+          </div>
+        </mdb-card-body>
+      </mdb-card>
+    </div>
+  </div>
+</div>
