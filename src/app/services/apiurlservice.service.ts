@@ -18,5 +18,6 @@ export class APIURLserviceService {
   public changePasswordURL = this.domain + "/api/auth/changepassword";
   public resetPasswordURL = this.domain + "/api/auth/resetPassword";
   public resetPasswordwTokenURL = this.domain + "/api/auth/resetPasswordwtoken";
+  public getMsgURL = this.domain + "/api/message/getmsgs";
   constructor() { }
 }

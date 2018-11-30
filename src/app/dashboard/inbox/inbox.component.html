@@ -1,5 +1,5 @@
 
-<div class="container topmargin">
+<div class="container topmargin" *ngIf="this.loadedMsgs == true">
   <div class="row">
     <div class="col-12">
       <mdb-card>
@@ -14,18 +14,20 @@
                     <thead>
                       <tr>
                         <th scope="col">From</th>
-                        <th scope="col">Name</th>
                         <th scope="col">Subject</th>
+                        <th scope="col">Time Recieved</th>
+                        <th scope="col">Read</th>
                         <th scope="col">Options</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let currentResult of searchData;let i = index">
-                        <th scope="row">{{currentResult.Email}}</th>
-                        <td>{{currentResult.UserData.FirstName}}</td>
-                        <td>{{currentResult.UserData.LastName}}</td>
+                      <tr *ngFor="let currentMsg of inboxMsgs;let i = index">
+                        <th scope="row">{{currentMsg.SenderEmail}}</th>
+                        <td>{{currentMsg.Msg.Subject}}</td>
+                        <td>{{currentMsg.Msg.SentTime}}</td>
+                        <td>{{currentMsg.Msg.Read}}</td>
                         <td>
-                          <div id="editChildData{{i}}" class="searchResult" (click)="selectProfilePage(currentResult)"><i class="fa fa-map-marker"></i> View Profile</div>
+                          <div id="currentMsg{{i}}" class="searchResult" (click)="readMessage(currentMsg)"> <i class="fa fa-envelope-o"></i> Read Message</div>
                         </td>
                       </tr>
                     </tbody>
