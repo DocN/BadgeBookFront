@@ -28,6 +28,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { RecoveryPageComponent } from './recovery-page/recovery-page.component';
 import { AppBoardComponent } from './app-board/app-board.component';
 import { InboxComponent } from './dashboard/inbox/inbox.component';
+import { ReadmsgComponent } from './dashboard/inbox/readmsg/readmsg.component';
 
 const appRoutes:Routes = [
   {
@@ -90,7 +91,8 @@ const appRoutes:Routes = [
     AdminDashboardComponent,
     RecoveryPageComponent,
     AppBoardComponent,
-    InboxComponent
+    InboxComponent,
+    ReadmsgComponent
   ],
   imports: [
     BrowserModule,

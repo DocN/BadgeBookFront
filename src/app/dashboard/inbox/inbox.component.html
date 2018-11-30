@@ -5,7 +5,9 @@
       <mdb-card>
         <mdb-card-body>
           <div class="row">
-            <h1>Inbox</h1>
+            <div class="col-12">
+              <h1>Inbox</h1>
+            </div>
           </div>
           <div class="row">
             <div class="col-12">
@@ -16,18 +18,24 @@
                         <th scope="col">From</th>
                         <th scope="col">Subject</th>
                         <th scope="col">Time Recieved</th>
-                        <th scope="col">Read</th>
                         <th scope="col">Options</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr *ngFor="let currentMsg of inboxMsgs;let i = index">
+                    <tbody *ngFor="let currentMsg of inboxMsgs;let i = index">
+                      <tr class="table-info" *ngIf="currentMsg.Msg.Read == true">
                         <th scope="row">{{currentMsg.SenderEmail}}</th>
                         <td>{{currentMsg.Msg.Subject}}</td>
                         <td>{{currentMsg.Msg.SentTime}}</td>
-                        <td>{{currentMsg.Msg.Read}}</td>
                         <td>
-                          <div id="currentMsg{{i}}" class="searchResult" (click)="readMessage(currentMsg)"> <i class="fa fa-envelope-o"></i> Read Message</div>
+                          <div id="currentMsg{{i}}" class="inboxmsgoption" (click)="readMessage(currentMsg)"> <i class="fa fa-envelope-o"></i> Read Message</div>
+                        </td>
+                      </tr>
+                      <tr *ngIf="currentMsg.Msg.Read == false">
+                        <th scope="row">{{currentMsg.SenderEmail}}</th>
+                        <td>{{currentMsg.Msg.Subject}}</td>
+                        <td>{{currentMsg.Msg.SentTime}}</td>
+                        <td>
+                          <div id="currentMsg{{i}}" class="inboxmsgoption" (click)="readMessage(currentMsg)"> <i class="fa fa-envelope-o"></i> Read Message</div>
                         </td>
                       </tr>
                     </tbody>
