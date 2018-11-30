@@ -27,6 +27,7 @@ import { AppRegistrationComponent } from './app-registration/app-registration.co
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { RecoveryPageComponent } from './recovery-page/recovery-page.component';
 import { AppBoardComponent } from './app-board/app-board.component';
+import { InboxComponent } from './dashboard/inbox/inbox.component';
 
 const appRoutes:Routes = [
   {
@@ -88,7 +89,8 @@ const appRoutes:Routes = [
     AppRegistrationComponent,
     AdminDashboardComponent,
     RecoveryPageComponent,
-    AppBoardComponent
+    AppBoardComponent,
+    InboxComponent
   ],
   imports: [
     BrowserModule,
