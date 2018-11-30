@@ -1,0 +1,29 @@
+<app-navigation></app-navigation>
+<br/>
+<div class="container" *ngIf="!loading">
+  <h2>Apps</h2>
+  <div class="row">
+    <div class="col-lg-4 col-sm-6 portfolio-item" *ngFor="let item of appList">
+      <div class="card h-100">
+        <a href="{{item.appUrl}}"><img class="card-img-top" src="{{item.imageUrl}}" alt=""></a>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="{{item.appUrl}}" target="_blank">{{item.name}}</a>
+          </h4>
+          <p class="card-text">{{item.description}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="card h-100">
+          <a href="/#/app-reg"><img class="card-img-top" src="data:image/png;base64,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" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="/#/app-reg">Add App</a>
+            </h4>
+            <p class="card-text">Wanna add your own app? Ez pz lemon squizy</p>
+          </div>
+        </div>
+      </div>
+
+</div>
