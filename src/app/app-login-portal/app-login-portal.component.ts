@@ -13,17 +13,31 @@ export class AppLoginPortalComponent implements OnInit {
   private loginModel: any = {};
 
   private appList: any = {
-    '0': "abc.ca",
-    '1': "www.ignika.azurewebsites.net",
-    '2': "cbcc.ca",
-    '666': 'fredwongg.github.io/ignika',
   }
+
+  private loading = true;
 
   id: string;
   constructor(private route: ActivatedRoute,
     private http: HttpClient,
     private APIURLserviceService: APIURLserviceService) {
     this.id = '' + this.route.snapshot.paramMap.get('id');
+    var config = {
+      headers: {
+        "Content-Type": "application/json; charset = utf-8;"
+      }
+    };
+    this.http.get(this.APIURLserviceService.domain + '/api/applications/active', config)
+      .subscribe(
+        (res) => {
+          console.log(res);
+          this.appList = res;
+          this.loading = false;
+        },
+        err => {
+          console.log(err);
+        }
+      );
   }
 
   ngOnInit() {
@@ -34,7 +48,7 @@ export class AppLoginPortalComponent implements OnInit {
   }
 
   login(loginModel) {
-    console.log("here");
+    
     let data = { "Email": loginModel.Email, "Password": loginModel.Password };
     const body = JSON.stringify(data);
     var config = {
@@ -45,12 +59,14 @@ export class AppLoginPortalComponent implements OnInit {
     this.http.post(this.APIURLserviceService.loginURL, data, config)
       .subscribe(
         (res) => {
-          window.location.href = 'http://' + this.appList[this.id] +'/?t=' + res["token"];
-          //window.location.href = this.appList[this.id] + '?t=' + res["token"];
+          this.appList.forEach(element => {
+            if (element['id'] == this.id) {
+              window.location.href = element['appUrl'] +'/?t=' + element["token"];
+            }
+          });
         },
         err => {
           console.log(err);
-          //finish loading
         }
       );
   }

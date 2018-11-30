@@ -23,7 +23,10 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { SearchComponent } from './search/search.component';
 import { ViewProfilePageComponent } from './view-profile-page/view-profile-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
+import { AppRegistrationComponent } from './app-registration/app-registration.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { RecoveryPageComponent } from './recovery-page/recovery-page.component';
+import { AppBoardComponent } from './app-board/app-board.component';
 
 const appRoutes:Routes = [
   {
@@ -51,8 +54,20 @@ const appRoutes:Routes = [
     component: ViewProfilePageComponent
   },
   {
+    path: 'app-reg',
+    component: AppRegistrationComponent
+  },
+  {
+    path: 'admin-dashboard',
+    component : AdminDashboardComponent
+  },
+  {
     path: 'recovery',
     component: RecoveryPageComponent
+  },
+  {
+    path: 'app-board',
+    component: AppBoardComponent
   }
 ];
 
@@ -70,7 +85,10 @@ const appRoutes:Routes = [
     SearchComponent,
     ViewProfilePageComponent,
     SearchPageComponent,
-    RecoveryPageComponent
+    AppRegistrationComponent,
+    AdminDashboardComponent,
+    RecoveryPageComponent,
+    AppBoardComponent
   ],
   imports: [
     BrowserModule,
