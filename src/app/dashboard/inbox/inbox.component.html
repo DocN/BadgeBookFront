@@ -1,0 +1,50 @@
+
+<div class="container topmargin" *ngIf="this.loadedMsgs == true">
+  <div class="row">
+    <div class="col-12">
+      <mdb-card>
+        <mdb-card-body>
+          <div class="row">
+            <div class="col-12">
+              <h1>Inbox</h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">From</th>
+                        <th scope="col">Subject</th>
+                        <th scope="col">Time Recieved</th>
+                        <th scope="col">Options</th>
+                      </tr>
+                    </thead>
+                    <tbody *ngFor="let currentMsg of inboxMsgs;let i = index">
+                      <tr class="table-info" *ngIf="currentMsg.Msg.Read == true">
+                        <th scope="row">{{currentMsg.SenderEmail}}</th>
+                        <td>{{currentMsg.Msg.Subject}}</td>
+                        <td>{{currentMsg.Msg.SentTime}}</td>
+                        <td>
+                          <div id="currentMsg{{i}}" class="inboxmsgoption" (click)="readMessage(currentMsg)"> <i class="fa fa-envelope-o"></i> Read Message</div>
+                        </td>
+                      </tr>
+                      <tr *ngIf="currentMsg.Msg.Read == false">
+                        <th scope="row">{{currentMsg.SenderEmail}}</th>
+                        <td>{{currentMsg.Msg.Subject}}</td>
+                        <td>{{currentMsg.Msg.SentTime}}</td>
+                        <td>
+                          <div id="currentMsg{{i}}" class="inboxmsgoption" (click)="readMessage(currentMsg)"> <i class="fa fa-envelope-o"></i> Read Message</div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>
+            </div>
+          </div>
+        </mdb-card-body>
+      </mdb-card>
+    </div>
+  </div>
+</div>

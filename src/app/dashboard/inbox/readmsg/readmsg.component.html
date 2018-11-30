@@ -1,0 +1,21 @@
+<div class="container containerMargin">
+  <div class="row">
+    <div class="col-12">
+        <mdb-card>
+            <mdb-card-body>
+              <div class="row">
+                <h1>Reading a Message from: {{this.messageservice.currentMsgData.SenderEmail}}</h1>
+              </div>
+              <div class="row">
+                <div class="col-12"><p>{{this.messageservice.currentMsgData.Msg.Msg}}</p></div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <button type="button" class="btn btn-success"(click)="reply()">Reply</button>
+                </div>
+              </div>
+            </mdb-card-body>
+        </mdb-card>
+    </div>
+  </div>
+</div>
