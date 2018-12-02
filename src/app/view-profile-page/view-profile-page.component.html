@@ -1,5 +1,5 @@
 <app-navigation></app-navigation>
-<div class="container-fluid background">
+<div class="container-fluid background" *ngIf="this.dataLoaded == true">
   <div class="container">
     <div class="row">
       <div class="col-8">
@@ -23,7 +23,7 @@
                   <img class="img-fluid pull-right" src="../../assets/images/pet.png">
                 </div>
               </div>
-              <div class="row">
+              <div class="row clickable" (click)="sendMessage()">
                 <img class="img-fluid widthImage" src="../../assets/images/bar.png">
               </div>
             </div>
@@ -33,8 +33,20 @@
       <div class="col-4">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Badges</h5>
-            <img class="img-fluid" src="../../assets/images//badges.png">
+            <div class="row">
+              <div class="col-12">
+                <h5 class="card-title">Badges</h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-lg-6 col-lg-6 col-xs-12" *ngFor="let currentResult of badgeData;let i = index">
+                <div class="borderframe">
+                  <h5>{{currentResult.BadgeName}}</h5>
+                  <img class="img-fluid" src="{{currentResult.ImageURL}}">
+                  <p>{{currentResult.BadgeDescription}}</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
