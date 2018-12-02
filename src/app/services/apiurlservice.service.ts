@@ -22,5 +22,6 @@ export class APIURLserviceService {
   public setReadMsgURL = this.domain + "/api/message/setReadStatus";
   public getEmailAddressfromUIDURL = this.domain + "/api/message/getUserEmail";
   public sendMsgURL = this.domain + "/api/message/sendMsg";
+  public getBadgesURL = this.domain + "/api/badges/";
   constructor() { }
 }
