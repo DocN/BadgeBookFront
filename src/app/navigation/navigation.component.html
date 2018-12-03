@@ -18,11 +18,14 @@
             <li class="nav-item" *ngIf="SessionServiceService.loggedIn && SessionServiceService.role=='Admin'">
                 <a class="nav-link waves-effect waves-light" routerLink="/admin-dashboard">App Dashboard</a>
             </li>
-            <li class="nav-item" *ngIf="SessionServiceService.loggedIn">
-                <a class="nav-link waves-effect waves-light" (click)="logout()">Logout</a>
+            <li class="nav-item" *ngIf="SessionServiceService.loggedIn == false">
+                <a class="nav-link waves-effect waves-light" routerLink="/register">Register</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link waves-effect waves-light" routerLink="/search">Search</a>
+            </li>
+            <li class="nav-item" *ngIf="SessionServiceService.loggedIn">
+                <a class="nav-link waves-effect waves-light" (click)="logout()">Logout</a>
             </li>
         </ul>
     </div>

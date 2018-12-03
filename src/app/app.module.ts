@@ -30,6 +30,7 @@ import { AppBoardComponent } from './app-board/app-board.component';
 import { InboxComponent } from './dashboard/inbox/inbox.component';
 import { ReadmsgComponent } from './dashboard/inbox/readmsg/readmsg.component';
 import { SendMessageComponent } from './send-message/send-message.component';
+import { RegisterComponent } from './register/register.component';
 
 const appRoutes:Routes = [
   {
@@ -76,6 +77,10 @@ const appRoutes:Routes = [
     path: 'sendmsg/:id',
     component: SendMessageComponent
   },
+  { 
+    path: 'register', 
+    component:RegisterComponent
+  }
 ];
 
 
@@ -98,7 +103,8 @@ const appRoutes:Routes = [
     AppBoardComponent,
     InboxComponent,
     ReadmsgComponent,
-    SendMessageComponent
+    SendMessageComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

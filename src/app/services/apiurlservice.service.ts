@@ -23,5 +23,6 @@ export class APIURLserviceService {
   public getEmailAddressfromUIDURL = this.domain + "/api/message/getUserEmail";
   public sendMsgURL = this.domain + "/api/message/sendMsg";
   public getBadgesURL = this.domain + "/api/badges/";
+  public registerURL = this.domain + "/api/auth/register";
   constructor() { }
 }

@@ -1,0 +1,59 @@
+<app-navigation></app-navigation>
+<div class="container topmargin">
+  <mdb-card>
+    <mdb-card-body>
+      <div class="row">
+        <div class="col-12">
+          <h1>Registration</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <form ngNativeValidate (ngSubmit)="registerUser()"> 
+            <div class="form-group">
+              <label for="name">Email</label>
+              <input name="Email" [(ngModel)]="registerModel.Email" #Email="ngModel" type="email" class="form-control" id="Email" required>
+            </div>
+            <div class="form-group">
+              <label for="name">Password</label>
+              <input name="Password" [(ngModel)]="registerModel.Password" #Email="ngModel" type="password" class="form-control" id="Password" required>
+            </div>
+            <div class="form-group">
+              <label for="name">First Name</label>
+              <input name="FirstName" [(ngModel)]="registerModel.FirstName" #Email="ngModel" type="text" class="form-control" id="FirstName" required>
+            </div>
+            <div class="form-group">
+              <label for="name">Last Name</label>
+              <input name="LastName" [(ngModel)]="registerModel.LastName" #Email="ngModel" type="text" class="form-control" id="LastName" required>
+            </div>
+            <div class="form-group">
+              <label for="name">Country</label>
+              <input name="Country" [(ngModel)]="registerModel.Country" #Email="ngModel" type="text" class="form-control" id="Country" required>
+            </div>
+            <div class="form-group">
+              <div class="container-fluid nopadding">
+                  <div class="row">
+                    <div class="col-4 centerText">
+                      <label for="name">Birth Day</label>
+                      <input name="BDate" [(ngModel)]="registerModel.BDate" #BDate="ngModel" type="number" min=1 max=31 class="form-control" id="BDay">
+                    </div>
+                    <div class="col-4 centerText">
+                      <label for="name">Birth Month</label>
+                      <input name="BMonth" [(ngModel)]="registerModel.BMonth" #BMonth="ngModel" type="number" min=1 max=12 class="form-control" id="BMonth">
+                    </div>
+                    <div class="col-4 centerText">
+                      <label for="name">Birth Year</label>
+                      <input name="BYear" [(ngModel)]="registerModel.BYear" #BYear="ngModel" type="number" min=1 max=2018 class="form-control" id="BYear">
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-success loginbtn" type="submit">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </mdb-card-body>
+  </mdb-card>
+</div>
