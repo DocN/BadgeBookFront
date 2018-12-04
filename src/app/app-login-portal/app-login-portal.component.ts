@@ -59,9 +59,10 @@ export class AppLoginPortalComponent implements OnInit {
     this.http.post(this.APIURLserviceService.loginURL, data, config)
       .subscribe(
         (res) => {
+          console.log(res);
           this.appList.forEach(element => {
             if (element['id'] == this.id) {
-              window.location.href = element['appUrl'] +'/?t=' + element["token"];
+              window.location.href = element['appUrl'] +'/?t=' + res["token"];
             }
           });
         },
